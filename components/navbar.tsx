@@ -2,6 +2,7 @@ import Link from "next/link"
 import { cn } from "@/lib/utils"
 import { buttonVariants } from "@/components/ui/button"
 import { StickyNote } from "lucide-react"
+import { ModeToggle } from "./mode-toggle"
 
 
 export default function Navbar() {
@@ -12,7 +13,10 @@ export default function Navbar() {
           <StickyNote />
           <span className="ml-2 font-bold">Quicknotes</span>
         </Link>
-        <Link href={"/login"} className={cn(buttonVariants({ variant: "secondary", size: "sm" }))}>Login</Link>
+        <div className="flex items-center">
+          <ModeToggle />
+          <Link href={"/login"} className={cn(buttonVariants({ variant: "secondary", size: "sm" }), "ml-4")}>Login</Link>
+        </div>
       </div>
     </header>
   )
