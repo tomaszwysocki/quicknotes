@@ -1,6 +1,16 @@
-import { LucideProps } from "lucide-react";
+import { ChevronLeft, Loader2, LogOut, LucideProps, Moon, Pencil, Plus, Settings, StickyNote, Sun, User } from "lucide-react";
 
 export const Icons = {
+    pencil: Pencil,
+    logout: LogOut,
+    settings: Settings,
+    new: Plus,
+    spinner: Loader2,
+    chevronLeft: ChevronLeft,
+    stickyNote: StickyNote,
+    moon: Moon,
+    sun: Sun,
+    user: User,
     gitHub: ({ ...props }: LucideProps) => (
         <svg
             aria-hidden="true"

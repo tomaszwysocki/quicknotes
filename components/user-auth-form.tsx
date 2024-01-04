@@ -3,7 +3,6 @@
 import { cn } from '@/lib/utils'
 import { buttonVariants } from '@/components/ui/button'
 import { useState } from 'react'
-import { Loader2 } from 'lucide-react'
 import { signIn } from 'next-auth/react'
 import { useToast } from './ui/use-toast'
 import { Icons } from './icons'
@@ -48,7 +47,7 @@ export function UserAuthForm() {
                 disabled={isGithubLoading}
             >
                 {isGithubLoading ? (
-                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                    <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
                 ) : (
                     <Icons.gitHub className="mr-2 h-4 w-4" />
                 )}{" "}
