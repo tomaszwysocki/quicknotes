@@ -43,6 +43,7 @@ model User {
   image         String?
   accounts      Account[]
   sessions      Session[]
+  notes         Note[]
 }
 
 model VerificationToken {
@@ -55,6 +56,8 @@ model VerificationToken {
 
 model Note {
   id        String   @id @default(cuid())
+  author    User     @relation(fields: [authorId], references: [id])
+  authorId  String
   title     String   @db.VarChar(100)
   content   String   @db.VarChar(1000)
   createdAt DateTime @default(now())
