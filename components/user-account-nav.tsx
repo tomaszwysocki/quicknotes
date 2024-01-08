@@ -35,15 +35,15 @@ const UserAccountNav = ({ user }: Props) => {
                 </div>
                 <DropdownMenuSeparator />
                 <DropdownMenuItem asChild>
-                    <Link href="/new-note">
-                        <Icons.pencil className="mr-2 h-4 w-4" />
-                        New note
+                    <Link href="/dashboard">
+                        <Icons.stickyNote className="mr-2 h-4 w-4" />
+                        All notes
                     </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
-                    <Link href="/settings">
-                        <Icons.settings className="mr-2 h-4 w-4" />
-                        Settings
+                    <Link href="/create-note">
+                        <Icons.pencil className="mr-2 h-4 w-4" />
+                        New note
                     </Link>
                 </DropdownMenuItem>
                 <DropdownMenuSeparator />

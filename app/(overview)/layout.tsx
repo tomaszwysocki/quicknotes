@@ -1,7 +1,12 @@
 import Navbar from "@/components/navbar";
 
-export default function OverviewLayout() {
+export default function OverviewLayout({ children }: { children: React.ReactNode }) {
     return (
-        <Navbar />
+        <>
+            <Navbar />
+            <div className="container mt-10">
+                {children}
+            </div>
+        </>
     )
 }
