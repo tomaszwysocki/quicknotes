@@ -15,7 +15,7 @@ export function UserAuthForm() {
     const loginWithGithub = async () => {
         setIsGithubLoading(true)
         try {
-            await signIn('github')
+            await signIn('github', { callbackUrl: '/dashboard' })
         } catch (error) {
             toast({
                 title: 'Error',
@@ -30,7 +30,7 @@ export function UserAuthForm() {
     const loginWithGoogle = async () => {
         setIsGoogleLoading(true)
         try {
-            await signIn('google')
+            await signIn('google', { callbackUrl: '/dashboard' })
         } catch (error) {
             toast({
                 title: 'Error',
