@@ -38,7 +38,7 @@ const CreateNoteForm = () => {
             })
         }
 
-        router.push('/')
+        router.push('/dashboard')
 
         return toast({
             description: "New note has been created.",
