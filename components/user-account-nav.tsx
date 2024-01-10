@@ -36,7 +36,7 @@ const UserAccountNav = ({ user }: Props) => {
                 <DropdownMenuSeparator />
                 <DropdownMenuItem asChild>
                     <Link href="/dashboard">
-                        <Icons.stickyNote className="mr-2 h-4 w-4" />
+                        <Icons.fileText className="mr-2 h-4 w-4" />
                         All notes
                     </Link>
                 </DropdownMenuItem>

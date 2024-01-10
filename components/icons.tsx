@@ -1,9 +1,10 @@
-import { ChevronLeft, Loader2, LogOut, LucideProps, Moon, Pencil, Plus, Settings, StickyNote, Sun, User } from "lucide-react";
+import { ChevronLeft, FileText, Loader2, LogOut, LucideProps, Moon, Pencil, Plus, Settings, StickyNote, Sun, User } from "lucide-react";
 
 export const Icons = {
     pencil: Pencil,
     logout: LogOut,
     settings: Settings,
+    fileText: FileText,
     new: Plus,
     spinner: Loader2,
     chevronLeft: ChevronLeft,
