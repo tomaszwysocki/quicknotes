@@ -38,7 +38,7 @@ const Dashboard = async () => {
             {notes?.length ? (
                 <>
                     <div className="flex items-center mb-5 justify-between">
-                        <h1 className="text-4xl">Your notes:</h1>
+                        <h1 className="text-3xl md:text-4xl">Your notes:</h1>
                         <Link href='/create-note' className={cn(
                             buttonVariants(),
                         )}>
@@ -46,7 +46,7 @@ const Dashboard = async () => {
                             New note
                         </Link>
                     </div>
-                    <div className="grid grid-cols-3 gap-5">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
                         {notes.map(note => (
                             <NoteItem className="h-[400px] overflow-hidden box-border" key={note.id} note={note} />
                         ))}
