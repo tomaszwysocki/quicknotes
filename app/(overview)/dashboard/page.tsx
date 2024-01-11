@@ -50,7 +50,7 @@ const Dashboard = async () => {
                     <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
                         {notes.map(note => (
                             <NoteItem
-                                className='h-[400px] overflow-hidden box-border relative'
+                                className='h-[400px] overflow-hidden box-border relative group'
                                 key={note.id}
                                 note={note}
                             />

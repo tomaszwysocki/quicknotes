@@ -22,3 +22,9 @@ export const noteSchema = z.object({
 export const noteSchemaDelete = z.object({
     id: z.string(),
 })
+
+export const noteSchemaUpdate = z.object({
+    id: z.string(),
+    title: z.string().min(1).max(100),
+    content: z.string().min(1).max(1000),
+})

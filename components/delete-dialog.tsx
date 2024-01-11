@@ -25,8 +25,6 @@ const DeleteDialog = ({ note, ...props }: Props) => {
     const router = useRouter()
 
     const handleDelete = async (id: typeof note.id) => {
-        console.log(id)
-
         const res = await fetch('/api/notes', {
             method: 'DELETE',
             headers: {
@@ -46,6 +44,7 @@ const DeleteDialog = ({ note, ...props }: Props) => {
         router.refresh()
 
         return toast({
+            title: 'Deleted!',
             description: 'Your note has been deleted.',
         })
     }
