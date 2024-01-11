@@ -1,7 +1,6 @@
 import { Icons } from "@/components/icons"
 import NoteItem from "@/components/note-item"
-import { Button, buttonVariants } from "@/components/ui/button"
-import { toast } from "@/components/ui/use-toast"
+import { buttonVariants } from "@/components/ui/button"
 import { authOptions } from "@/lib/auth"
 import { db } from "@/lib/db"
 import { getCurrentUser } from "@/lib/session"
@@ -48,13 +47,13 @@ const Dashboard = async () => {
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
                         {notes.map(note => (
-                            <NoteItem className="h-[400px] overflow-hidden box-border" key={note.id} note={note} />
+                            <NoteItem className="h-[400px] overflow-hidden box-border relative" key={note.id} note={note} />
                         ))}
                     </div>
                 </>
             ) : (
                 <>
-                    <h1 className="text-4xl">You don't have any notes yet</h1>
+                    <h1 className="text-4xl">You don&apos;t have any notes yet</h1>
                 </>
             )}
         </div>

@@ -12,3 +12,7 @@ export const noteSchema = z.object({
         message: 'Content must be at most 1000 characters.'
     }),
 })
+
+export const noteSchemaDelete = z.object({
+    id: z.string()
+})

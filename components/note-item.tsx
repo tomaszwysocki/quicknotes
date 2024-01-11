@@ -1,6 +1,10 @@
 import { Note } from "@prisma/client"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card"
 import dayjs from 'dayjs'
+import { Icons } from "./icons"
+import { cn } from "@/lib/utils"
+import { Button, buttonVariants } from "./ui/button"
+import DeleteDialog from "./delete-dialog"
 
 interface Props extends React.HTMLAttributes<HTMLDivElement> {
     note: Pick<Note, 'id' | 'title' | 'content' | 'updatedAt'>
@@ -11,6 +15,7 @@ const NoteItem = ({ note, ...props }: Props) => {
 
     return (
         <Card {...props}>
+            <DeleteDialog note={note} className="absolute right-3 top-3 h-10 w-10 p-0" />
             <CardHeader>
                 <CardTitle>{note.title}</CardTitle>
                 <CardDescription>{dateFormat}</CardDescription>
@@ -20,7 +25,7 @@ const NoteItem = ({ note, ...props }: Props) => {
                     {note.content}
                 </CardContent>
             </div>
-        </Card>
+        </Card >
     )
 }
 export default NoteItem
