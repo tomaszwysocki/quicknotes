@@ -52,9 +52,15 @@ const Dashboard = async () => {
                     </div>
                 </>
             ) : (
-                <>
-                    <h1 className="text-4xl">You don&apos;t have any notes yet</h1>
-                </>
+                <div className="flex items-center mb-5 justify-between">
+                    <h1 className="text-3xl md:text-4xl">You don&apos;t have any notes yet</h1>
+                    <Link href='/create-note' className={cn(
+                        buttonVariants(),
+                    )}>
+                        <Icons.pencil className="h-[18px] w-[18px] mr-2" />
+                        New note
+                    </Link>
+                </div>
             )}
         </div>
     )
