@@ -51,7 +51,7 @@ const UserAccountNav = ({ user }: Props) => {
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
                     <Link href='/create-note'>
-                        <Icons.pencil className='mr-2 h-4 w-4' />
+                        <Icons.new className='mr-2 h-4 w-4' />
                         New note
                     </Link>
                 </DropdownMenuItem>

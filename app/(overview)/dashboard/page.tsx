@@ -49,7 +49,7 @@ const Dashboard = async () => {
                             href='/create-note'
                             className={cn(buttonVariants())}
                         >
-                            <Icons.pencil className='h-[18px] w-[18px] mr-2' />
+                            <Icons.new className='h-[18px] w-[18px] mr-2' />
                             New note
                         </Link>
                     </div>
@@ -69,7 +69,7 @@ const Dashboard = async () => {
                         You don&apos;t have any notes yet
                     </h1>
                     <Link href='/create-note' className={cn(buttonVariants())}>
-                        <Icons.pencil className='h-[18px] w-[18px] mr-2' />
+                        <Icons.new className='h-[18px] w-[18px] mr-2' />
                         New note
                     </Link>
                 </div>
