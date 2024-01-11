@@ -1,28 +1,17 @@
 import { Note } from '@prisma/client'
-import {
-    Card,
-    CardContent,
-    CardDescription,
-    CardHeader,
-    CardTitle,
-} from './ui/card'
-import dayjs from 'dayjs'
+import { Card, CardContent, CardHeader, CardTitle } from './ui/card'
 import DeleteDialog from './delete-dialog'
 import Link from 'next/link'
 import { Icons } from './icons'
 import { buttonVariants } from './ui/button'
 import { cn } from '@/lib/utils'
-import Timezone from 'dayjs/plugin/timezone'
+import DateTime from './date-time'
 
 interface Props extends React.HTMLAttributes<HTMLDivElement> {
     note: Pick<Note, 'id' | 'title' | 'content' | 'updatedAt'>
 }
 
 const NoteItem = ({ note, ...props }: Props) => {
-    dayjs.extend(Timezone)
-    dayjs.tz.setDefault('Europe/Warsaw')
-    const dateFormat = dayjs(note.updatedAt).format('DD.MM.YYYY HH:mm')
-
     return (
         <Card {...props}>
             <Link
@@ -40,7 +29,7 @@ const NoteItem = ({ note, ...props }: Props) => {
             />
             <CardHeader>
                 <CardTitle>{note.title}</CardTitle>
-                <CardDescription>{dateFormat}</CardDescription>
+                <DateTime note={note} />
             </CardHeader>
             <div>
                 <CardContent className='whitespace-break-spaces'>
