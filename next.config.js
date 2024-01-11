@@ -9,7 +9,16 @@ const nextConfig = {
                 hostname: 'lh3.googleusercontent.com',
             },
         ]
-    }
+    },
+    async redirects() {
+        return [
+            {
+                source: '/',
+                destination: '/dashboard',
+                permanent: false,
+            },
+        ]
+    },
 }
 
 module.exports = nextConfig
