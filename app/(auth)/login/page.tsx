@@ -4,13 +4,21 @@ import { Metadata } from 'next'
 // import { buttonVariants } from '@/components/ui/button'
 import UserAuthForm from '@/components/user-auth-form'
 import { Icons } from '@/components/icons'
+import { getCurrentUser } from '@/lib/session'
+import { redirect } from 'next/navigation'
 
 export const metadata: Metadata = {
     title: 'Login',
     description: 'Login to your account',
 }
 
-export default function LoginPage() {
+const LoginPage = async () => {
+    const user = await getCurrentUser()
+
+    if (user) {
+        redirect('/dashboard')
+    }
+
     return (
         <div className='container flex h-screen w-screen flex-col items-center justify-center'>
             {/* <Link
@@ -37,3 +45,5 @@ export default function LoginPage() {
         </div>
     )
 }
+
+export default LoginPage
