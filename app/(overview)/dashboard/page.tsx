@@ -37,7 +37,7 @@ const Dashboard = async () => {
             {notes?.length ? (
                 <>
                     <div className="flex items-center mb-5 justify-between">
-                        <h1 className="text-3xl md:text-4xl">Your notes:</h1>
+                        <h1 className="text-3xl md:text-4xl">Your notes ({notes.length}):</h1>
                         <Link href='/create-note' className={cn(
                             buttonVariants(),
                         )}>
