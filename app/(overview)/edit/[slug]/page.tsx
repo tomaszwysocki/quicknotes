@@ -2,7 +2,13 @@ import EditNoteForm from '@/components/edit-note-form'
 import { authOptions } from '@/lib/auth'
 import { db } from '@/lib/db'
 import { getCurrentUser } from '@/lib/session'
+import { Metadata } from 'next'
 import { notFound, redirect } from 'next/navigation'
+
+export const metadata: Metadata = {
+    title: 'Edit Note',
+    description: 'Modify your existing note.',
+}
 
 const EditPage = async ({ params: { slug } }: { params: { slug: string } }) => {
     const user = await getCurrentUser()

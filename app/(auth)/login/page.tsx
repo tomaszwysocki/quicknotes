@@ -9,7 +9,7 @@ import { redirect } from 'next/navigation'
 
 export const metadata: Metadata = {
     title: 'Login',
-    description: 'Login to your account',
+    description: 'Login to quicknotes.',
 }
 
 const LoginPage = async () => {

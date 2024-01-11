@@ -5,8 +5,14 @@ import { authOptions } from '@/lib/auth'
 import { db } from '@/lib/db'
 import { getCurrentUser } from '@/lib/session'
 import { cn } from '@/lib/utils'
+import { Metadata } from 'next'
 import Link from 'next/link'
 import { redirect } from 'next/navigation'
+
+export const metadata: Metadata = {
+    title: 'Dashboard',
+    description: 'View and manage your notes.',
+}
 
 const Dashboard = async () => {
     const user = await getCurrentUser()
