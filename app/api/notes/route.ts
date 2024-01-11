@@ -1,8 +1,8 @@
-import { NextRequest } from "next/server";
-import { getAuthSession } from "@/lib/auth";
+import { NextRequest } from 'next/server'
+import { getAuthSession } from '@/lib/auth'
 import * as z from 'zod'
-import { noteSchema, noteSchemaDelete } from "@/lib/validations/note";
-import { db } from "@/lib/db";
+import { noteSchema, noteSchemaDelete } from '@/lib/validations/note'
+import { db } from '@/lib/db'
 
 export async function POST(req: NextRequest) {
     try {
@@ -18,8 +18,8 @@ export async function POST(req: NextRequest) {
             data: {
                 title: body.title,
                 content: body.content,
-                authorId: session.user.id
-            }
+                authorId: session.user.id,
+            },
         })
 
         return new Response(null, { status: 200 })
@@ -44,8 +44,8 @@ export async function DELETE(req: NextRequest) {
 
         await db.note.delete({
             where: {
-                id: body.id
-            }
+                id: body.id,
+            },
         })
 
         return new Response(null, { status: 204 })

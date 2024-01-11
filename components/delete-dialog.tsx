@@ -10,13 +10,12 @@ import {
     AlertDialogHeader,
     AlertDialogTitle,
     AlertDialogTrigger,
-} from "@/components/ui/alert-dialog"
-import { Button } from "@/components/ui/button"
-import { Icons } from "./icons"
-import { Note } from "@prisma/client"
-import { toast } from "./ui/use-toast"
-import { useRouter } from "next/navigation"
-
+} from '@/components/ui/alert-dialog'
+import { Button } from '@/components/ui/button'
+import { Icons } from './icons'
+import { Note } from '@prisma/client'
+import { toast } from './ui/use-toast'
+import { useRouter } from 'next/navigation'
 
 interface Props extends React.HTMLAttributes<HTMLButtonElement> {
     note: Pick<Note, 'id'>
@@ -31,43 +30,48 @@ const DeleteDialog = ({ note, ...props }: Props) => {
         const res = await fetch('/api/notes', {
             method: 'DELETE',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ id })
+            body: JSON.stringify({ id }),
         })
 
         if (!res?.ok) {
             return toast({
-                title: "Something went wrong.",
-                description: "Your note was not deleted. Please try again.",
-                variant: "destructive",
+                title: 'Something went wrong.',
+                description: 'Your note was not deleted. Please try again.',
+                variant: 'destructive',
             })
         }
 
         router.refresh()
 
         return toast({
-            description: "Your note has been deleted.",
+            description: 'Your note has been deleted.',
         })
     }
 
     return (
         <AlertDialog>
             <AlertDialogTrigger asChild>
-                <Button {...props} variant={"outline"}>
-                    <Icons.delete className="h-5 w-5" />
+                <Button {...props} variant={'outline'}>
+                    <Icons.delete className='h-5 w-5' />
                 </Button>
             </AlertDialogTrigger>
             <AlertDialogContent>
                 <AlertDialogHeader>
-                    <AlertDialogTitle>Do you want to delete this note?</AlertDialogTitle>
+                    <AlertDialogTitle>
+                        Do you want to delete this note?
+                    </AlertDialogTitle>
                     <AlertDialogDescription>
-                        This action cannot be undone. This will permanently delete this note.
+                        This action cannot be undone. This will permanently
+                        delete this note.
                     </AlertDialogDescription>
                 </AlertDialogHeader>
                 <AlertDialogFooter>
                     <AlertDialogCancel>Cancel</AlertDialogCancel>
-                    <AlertDialogAction onClick={() => handleDelete(note.id)}>Continue</AlertDialogAction>
+                    <AlertDialogAction onClick={() => handleDelete(note.id)}>
+                        Continue
+                    </AlertDialogAction>
                 </AlertDialogFooter>
             </AlertDialogContent>
         </AlertDialog>

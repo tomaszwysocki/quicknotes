@@ -1,15 +1,21 @@
 'use client'
 
-import { Button } from '@/components/ui/button';
-import { useRouter } from 'next/navigation';
+import { Button } from '@/components/ui/button'
+import { useRouter } from 'next/navigation'
 import * as z from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { useForm } from 'react-hook-form';
-import { Form, FormControl, FormField, FormItem, FormMessage } from '@/components/ui/form';
-import { Input } from '@/components/ui/input';
-import { Textarea } from './ui/textarea';
-import { toast } from './ui/use-toast';
-import { noteSchema } from '@/lib/validations/note';
+import { useForm } from 'react-hook-form'
+import {
+    Form,
+    FormControl,
+    FormField,
+    FormItem,
+    FormMessage,
+} from '@/components/ui/form'
+import { Input } from '@/components/ui/input'
+import { Textarea } from './ui/textarea'
+import { toast } from './ui/use-toast'
+import { noteSchema } from '@/lib/validations/note'
 
 const CreateNoteForm = () => {
     const router = useRouter()
@@ -22,19 +28,19 @@ const CreateNoteForm = () => {
         const res = await fetch('/api/notes', {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
             },
             body: JSON.stringify({
                 title: data.title,
-                content: data.content
+                content: data.content,
             }),
         })
 
         if (!res?.ok) {
             return toast({
-                title: "Something went wrong.",
-                description: "Your note was not added. Please try again.",
-                variant: "destructive",
+                title: 'Something went wrong.',
+                description: 'Your note was not added. Please try again.',
+                variant: 'destructive',
             })
         }
 
@@ -42,10 +48,9 @@ const CreateNoteForm = () => {
         router.refresh()
 
         return toast({
-            description: "New note has been created.",
+            description: 'New note has been created.',
         })
     }
-
 
     return (
         <Form {...form}>
@@ -68,7 +73,10 @@ const CreateNoteForm = () => {
                     render={({ field }) => (
                         <FormItem>
                             <FormControl>
-                                <Textarea placeholder='Your content goes here...' {...field} />
+                                <Textarea
+                                    placeholder='Your content goes here...'
+                                    {...field}
+                                />
                             </FormControl>
                             <FormMessage />
                         </FormItem>
@@ -77,9 +85,7 @@ const CreateNoteForm = () => {
                 <Button type='submit'>Create a note</Button>
             </form>
         </Form>
-
-
-    );
-};
+    )
+}
 
 export default CreateNoteForm
