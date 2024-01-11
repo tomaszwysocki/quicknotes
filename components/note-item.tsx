@@ -12,12 +12,15 @@ import Link from 'next/link'
 import { Icons } from './icons'
 import { buttonVariants } from './ui/button'
 import { cn } from '@/lib/utils'
+import Timezone from 'dayjs/plugin/timezone'
 
 interface Props extends React.HTMLAttributes<HTMLDivElement> {
     note: Pick<Note, 'id' | 'title' | 'content' | 'updatedAt'>
 }
 
 const NoteItem = ({ note, ...props }: Props) => {
+    dayjs.extend(Timezone)
+    dayjs.tz.setDefault('Europe/Warsaw')
     const dateFormat = dayjs(note.updatedAt).format('DD.MM.YYYY HH:mm')
 
     return (
