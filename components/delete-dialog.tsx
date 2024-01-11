@@ -62,7 +62,7 @@ const DeleteDialog = ({ note, ...props }: Props) => {
                 <AlertDialogHeader>
                     <AlertDialogTitle>Do you want to delete this note?</AlertDialogTitle>
                     <AlertDialogDescription>
-                        This action cannot be undone. This will permanently this note.
+                        This action cannot be undone. This will permanently delete this note.
                     </AlertDialogDescription>
                 </AlertDialogHeader>
                 <AlertDialogFooter>
