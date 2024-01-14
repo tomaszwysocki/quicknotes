@@ -1,36 +1,33 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# [Quicknotes](https://quicknotes-iota.vercel.app/)
 
-## Getting Started
+Quicknotes is a dynamic notes management application built with Next.js, offering a seamless and efficient way to organize your thoughts, tasks, and information. The application allows users to log in with their Google or Github accounts using OAuth, creating, viewing, editing, and deleting notes with ease.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+-   **Authentication**: Log in with your Google or Github account using OAuth for a secure and streamlined authentication process.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+-   **Note Creation & Management**: Create, view, edit, and delete notes effortlessly to stay organized and productive.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+-   **Responsive Design**: Enjoy a consistent and user-friendly experience across various devices and screen sizes.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+-   **Efficient Backend**: Utilizes the power of Next.js for a robust, scalable, and performant backend.
 
-## Learn More
+-   **Intuitive User Interface**: Designed with a focus on user experience, Quicknotes provides an intuitive interface for a seamless navigation experience.
 
-To learn more about Next.js, take a look at the following resources:
+## Tech Stack
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+-   [Next.js](https://nextjs.org/) – framework
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+-   [TypeScript](https://www.typescriptlang.org/) – language
 
-## Deploy on Vercel
+-   [Tailwind](https://tailwindcss.com/) – CSS
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+-   [PlanetScale](https://planetscale.com/) – database (MySQL)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+-   [NextAuth.js](https://next-auth.js.org/) – auth
+
+-   [Vercel](https://vercel.com/) – deployment
+
+## License
+
+This project is licensed under the MIT License.
