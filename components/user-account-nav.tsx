@@ -13,11 +13,11 @@ import Link from 'next/link'
 import { signOut } from 'next-auth/react'
 import { Icons } from './icons'
 
-interface Props {
+interface UserAccountNavProps {
     user: Pick<User, 'email' | 'image' | 'name'>
 }
 
-const UserAccountNav = ({ user }: Props) => {
+const UserAccountNav = ({ user }: UserAccountNavProps) => {
     return (
         <DropdownMenu>
             <DropdownMenuTrigger>

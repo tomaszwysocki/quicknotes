@@ -14,11 +14,11 @@ import * as z from 'zod'
 import Link from 'next/link'
 import { cn } from '@/lib/utils'
 
-interface Props {
+interface EditNoteFormProps {
     note: Pick<Note, 'title' | 'content' | 'id'>
 }
 
-const EditNoteForm = ({ note }: Props) => {
+const EditNoteForm = ({ note }: EditNoteFormProps) => {
     const router = useRouter()
 
     const form = useForm<z.infer<typeof noteSchema>>({

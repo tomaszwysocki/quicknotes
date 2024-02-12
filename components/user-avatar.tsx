@@ -4,11 +4,11 @@ import Image from 'next/image'
 import { Icons } from './icons'
 import { AvatarProps } from '@radix-ui/react-avatar'
 
-interface Props extends AvatarProps {
+interface UserAvatarProps extends AvatarProps {
     user: Pick<User, 'image' | 'name'>
 }
 
-const UserAvatar = ({ user, ...props }: Props) => {
+const UserAvatar = ({ user, ...props }: UserAvatarProps) => {
     return (
         <Avatar {...props}>
             {user.image ? (

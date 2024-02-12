@@ -17,11 +17,11 @@ import { Note } from '@prisma/client'
 import { toast } from './ui/use-toast'
 import { useRouter } from 'next/navigation'
 
-interface Props extends React.HTMLAttributes<HTMLButtonElement> {
+interface DeleteDialogProps extends React.HTMLAttributes<HTMLButtonElement> {
     note: Pick<Note, 'id'>
 }
 
-const DeleteDialog = ({ note, ...props }: Props) => {
+const DeleteDialog = ({ note, ...props }: DeleteDialogProps) => {
     const router = useRouter()
 
     const handleDelete = async (id: typeof note.id) => {

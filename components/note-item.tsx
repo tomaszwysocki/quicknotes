@@ -10,11 +10,11 @@ import { cn } from '@/lib/utils'
 import DateTime from './date-time'
 import { motion, AnimatePresence } from 'framer-motion'
 
-interface Props extends React.HTMLAttributes<HTMLDivElement> {
+interface NoteItemProps extends React.HTMLAttributes<HTMLDivElement> {
     note: Pick<Note, 'id' | 'title' | 'content' | 'updatedAt'>
 }
 
-const NoteItem = ({ note, ...props }: Props) => {
+const NoteItem = ({ note, ...props }: NoteItemProps) => {
     return (
         <AnimatePresence>
             <motion.div layout>
