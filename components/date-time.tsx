@@ -11,7 +11,11 @@ interface DateTimeProps {
 const DateTime = ({ note }: DateTimeProps) => {
     const dateFormat = dayjs(note.updatedAt).format('DD.MM.YYYY HH:mm')
 
-    return <CardDescription>{dateFormat}</CardDescription>
+    return (
+        <CardDescription suppressHydrationWarning={true}>
+            {dateFormat}
+        </CardDescription>
+    )
 }
 
 export default DateTime
